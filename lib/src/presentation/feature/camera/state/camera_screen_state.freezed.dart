@@ -22,6 +22,7 @@ mixin _$CameraScreenState {
   double get guidePhotoOpacity => throw _privateConstructorUsedError;
   AlbumMetadata get selectedAlbum => throw _privateConstructorUsedError;
   AppPhoto? get guidePhoto => throw _privateConstructorUsedError;
+  int get resolutionNumber => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CameraScreenStateCopyWith<CameraScreenState> get copyWith =>
@@ -40,7 +41,8 @@ abstract class $CameraScreenStateCopyWith<$Res> {
       double guideLineOpacity,
       double guidePhotoOpacity,
       AlbumMetadata selectedAlbum,
-      AppPhoto? guidePhoto});
+      AppPhoto? guidePhoto,
+      int resolutionNumber});
 
   $AlbumMetadataCopyWith<$Res> get selectedAlbum;
   $AppPhotoCopyWith<$Res>? get guidePhoto;
@@ -65,6 +67,7 @@ class _$CameraScreenStateCopyWithImpl<$Res, $Val extends CameraScreenState>
     Object? guidePhotoOpacity = null,
     Object? selectedAlbum = null,
     Object? guidePhoto = freezed,
+    Object? resolutionNumber = null,
   }) {
     return _then(_value.copyWith(
       selectedCameraIndex: null == selectedCameraIndex
@@ -91,6 +94,10 @@ class _$CameraScreenStateCopyWithImpl<$Res, $Val extends CameraScreenState>
           ? _value.guidePhoto
           : guidePhoto // ignore: cast_nullable_to_non_nullable
               as AppPhoto?,
+      resolutionNumber: null == resolutionNumber
+          ? _value.resolutionNumber
+          : resolutionNumber // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 
@@ -129,7 +136,8 @@ abstract class _$$CameraScreenStateImplCopyWith<$Res>
       double guideLineOpacity,
       double guidePhotoOpacity,
       AlbumMetadata selectedAlbum,
-      AppPhoto? guidePhoto});
+      AppPhoto? guidePhoto,
+      int resolutionNumber});
 
   @override
   $AlbumMetadataCopyWith<$Res> get selectedAlbum;
@@ -154,6 +162,7 @@ class __$$CameraScreenStateImplCopyWithImpl<$Res>
     Object? guidePhotoOpacity = null,
     Object? selectedAlbum = null,
     Object? guidePhoto = freezed,
+    Object? resolutionNumber = null,
   }) {
     return _then(_$CameraScreenStateImpl(
       selectedCameraIndex: null == selectedCameraIndex
@@ -180,6 +189,10 @@ class __$$CameraScreenStateImplCopyWithImpl<$Res>
           ? _value.guidePhoto
           : guidePhoto // ignore: cast_nullable_to_non_nullable
               as AppPhoto?,
+      resolutionNumber: null == resolutionNumber
+          ? _value.resolutionNumber
+          : resolutionNumber // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -195,7 +208,8 @@ class _$CameraScreenStateImpl
       required this.guideLineOpacity,
       required this.guidePhotoOpacity,
       required this.selectedAlbum,
-      required this.guidePhoto});
+      required this.guidePhoto,
+      required this.resolutionNumber});
 
   @override
   final int selectedCameraIndex;
@@ -209,10 +223,12 @@ class _$CameraScreenStateImpl
   final AlbumMetadata selectedAlbum;
   @override
   final AppPhoto? guidePhoto;
+  @override
+  final int resolutionNumber;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CameraScreenState(selectedCameraIndex: $selectedCameraIndex, timerSeconds: $timerSeconds, guideLineOpacity: $guideLineOpacity, guidePhotoOpacity: $guidePhotoOpacity, selectedAlbum: $selectedAlbum, guidePhoto: $guidePhoto)';
+    return 'CameraScreenState(selectedCameraIndex: $selectedCameraIndex, timerSeconds: $timerSeconds, guideLineOpacity: $guideLineOpacity, guidePhotoOpacity: $guidePhotoOpacity, selectedAlbum: $selectedAlbum, guidePhoto: $guidePhoto, resolutionNumber: $resolutionNumber)';
   }
 
   @override
@@ -225,7 +241,8 @@ class _$CameraScreenStateImpl
       ..add(DiagnosticsProperty('guideLineOpacity', guideLineOpacity))
       ..add(DiagnosticsProperty('guidePhotoOpacity', guidePhotoOpacity))
       ..add(DiagnosticsProperty('selectedAlbum', selectedAlbum))
-      ..add(DiagnosticsProperty('guidePhoto', guidePhoto));
+      ..add(DiagnosticsProperty('guidePhoto', guidePhoto))
+      ..add(DiagnosticsProperty('resolutionNumber', resolutionNumber));
   }
 
   @override
@@ -244,7 +261,9 @@ class _$CameraScreenStateImpl
             (identical(other.selectedAlbum, selectedAlbum) ||
                 other.selectedAlbum == selectedAlbum) &&
             (identical(other.guidePhoto, guidePhoto) ||
-                other.guidePhoto == guidePhoto));
+                other.guidePhoto == guidePhoto) &&
+            (identical(other.resolutionNumber, resolutionNumber) ||
+                other.resolutionNumber == resolutionNumber));
   }
 
   @override
@@ -255,7 +274,8 @@ class _$CameraScreenStateImpl
       guideLineOpacity,
       guidePhotoOpacity,
       selectedAlbum,
-      guidePhoto);
+      guidePhoto,
+      resolutionNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -272,7 +292,8 @@ abstract class _CameraScreenState implements CameraScreenState {
       required final double guideLineOpacity,
       required final double guidePhotoOpacity,
       required final AlbumMetadata selectedAlbum,
-      required final AppPhoto? guidePhoto}) = _$CameraScreenStateImpl;
+      required final AppPhoto? guidePhoto,
+      required final int resolutionNumber}) = _$CameraScreenStateImpl;
 
   @override
   int get selectedCameraIndex;
@@ -286,6 +307,8 @@ abstract class _CameraScreenState implements CameraScreenState {
   AlbumMetadata get selectedAlbum;
   @override
   AppPhoto? get guidePhoto;
+  @override
+  int get resolutionNumber;
   @override
   @JsonKey(ignore: true)
   _$$CameraScreenStateImplCopyWith<_$CameraScreenStateImpl> get copyWith =>

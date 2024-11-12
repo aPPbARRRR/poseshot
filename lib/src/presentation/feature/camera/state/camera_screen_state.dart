@@ -15,6 +15,7 @@ class CameraScreenState with _$CameraScreenState {
     required double guidePhotoOpacity,
     required AlbumMetadata selectedAlbum,
     required AppPhoto? guidePhoto,
+    required int resolutionNumber,
     // required List<Person> guidePersons,
     // required bool isGuidePoseSame,
     // required bool isGuidePhotoVisible,

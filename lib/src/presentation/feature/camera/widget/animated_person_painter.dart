@@ -116,7 +116,7 @@ class _AnimatedPersonPainterState extends State<AnimatedPersonPainter>
 
     _animation = CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeOut, // 원하는 Curve를 설정할 수 있습니다.
+      curve: Curves.easeOut,
     );
 
     _controller.addListener(() {
@@ -145,95 +145,194 @@ class _AnimatedPersonPainterState extends State<AnimatedPersonPainter>
     super.didUpdateWidget(oldWidget);
 
     if (oldWidget.person.boundingBox != widget.person.boundingBox) {
-      _nose = Tween<Offset>(
-              begin: curNose,
-              end: widget.person.nose
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.nose != null) {
+        _nose = Tween<Offset>(
+                begin: curNose ??
+                    widget.person.nose?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.nose
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftEye = Tween<Offset>(
-              begin: curLeftEye,
-              end: widget.person.lefteye
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.lefteye != null) {
+        _leftEye = Tween<Offset>(
+                begin: curLeftEye ??
+                    widget.person.lefteye?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.lefteye
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightEye = Tween<Offset>(
-              begin: curRightEye,
-              end: widget.person.righteye
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.righteye != null) {
+        _rightEye = Tween<Offset>(
+                begin: curRightEye ??
+                    widget.person.righteye?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.righteye
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftShoulder = Tween<Offset>(
-              begin: curLeftShoulder,
-              end: widget.person.leftshoulder
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.leftshoulder != null) {
+        _leftShoulder = Tween<Offset>(
+                begin: curLeftShoulder ??
+                    widget.person.leftshoulder?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.leftshoulder
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightShoulder = Tween<Offset>(
-              begin: curRightShoulder,
-              end: widget.person.rightshoulder
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.rightshoulder != null) {
+        _rightShoulder = Tween<Offset>(
+                begin: curRightShoulder ??
+                    widget.person.rightshoulder?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.rightshoulder
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftHip = Tween<Offset>(
-              begin: curLeftHip,
-              end: widget.person.lefthip
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.lefthip != null) {
+        _leftHip = Tween<Offset>(
+                begin: curLeftHip ??
+                    widget.person.lefthip?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.lefthip
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightHip = Tween<Offset>(
-              begin: curRightHip,
-              end: widget.person.righthip
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.righthip != null) {
+        _rightHip = Tween<Offset>(
+                begin: curRightHip ??
+                    widget.person.righthip?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.righthip
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftKnee = Tween<Offset>(
-              begin: curLeftKnee,
-              end: widget.person.leftknee
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.leftshoulder != null) {
+        _leftShoulder = Tween<Offset>(
+                begin: curLeftShoulder ??
+                    widget.person.leftshoulder?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.leftshoulder
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
+      if (widget.person.rightshoulder != null) {
+        _rightShoulder = Tween<Offset>(
+                begin: curRightShoulder ??
+                    widget.person.rightshoulder?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.rightshoulder
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightKnee = Tween<Offset>(
-              begin: curRightKnee,
-              end: widget.person.rightknee
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.leftwrist != null) {
+        _leftWrist = Tween<Offset>(
+                begin: curLeftWrist ??
+                    widget.person.leftwrist?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.leftwrist
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftAnkle = Tween<Offset>(
-              begin: curLeftAnkle,
-              end: widget.person.leftankle
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.rightwrist != null) {
+        _rightWrist = Tween<Offset>(
+                begin: curRightWrist ??
+                    widget.person.rightwrist?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.rightwrist
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightAnkle = Tween<Offset>(
-              begin: curRightAnkle,
-              end: widget.person.rightankle
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.leftelbow != null) {
+        _leftElbow = Tween<Offset>(
+                begin: curLeftElbow ??
+                    widget.person.leftelbow?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.leftelbow
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftWrist = Tween<Offset>(
-              begin: curLeftWrist,
-              end: widget.person.leftwrist
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.rightelbow != null) {
+        _rightElbow = Tween<Offset>(
+                begin: curRightElbow ??
+                    widget.person.rightelbow?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.rightelbow
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightWrist = Tween<Offset>(
-              begin: curRightWrist,
-              end: widget.person.rightwrist
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.lefthip != null) {
+        _leftHip = Tween<Offset>(
+                begin: curLeftHip ??
+                    widget.person.lefthip?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.lefthip
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _leftElbow = Tween<Offset>(
-              begin: curLeftElbow,
-              end: widget.person.leftelbow
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.righthip != null) {
+        _rightHip = Tween<Offset>(
+                begin: curRightHip ??
+                    widget.person.righthip?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.righthip
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
-      _rightElbow = Tween<Offset>(
-              begin: curRightElbow,
-              end: widget.person.rightelbow
-                  ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
-          .animate(_animation);
+      if (widget.person.leftknee != null) {
+        _leftKnee = Tween<Offset>(
+                begin: curLeftKnee ??
+                    widget.person.leftknee?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.leftknee
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
+
+      if (widget.person.rightknee != null) {
+        _rightKnee = Tween<Offset>(
+                begin: curRightKnee ??
+                    widget.person.rightknee?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.rightknee
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
+
+      if (widget.person.leftankle != null) {
+        _leftAnkle = Tween<Offset>(
+                begin: curLeftAnkle ??
+                    widget.person.leftankle?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.leftankle
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
+
+      if (widget.person.rightankle != null) {
+        _rightAnkle = Tween<Offset>(
+                begin: curRightAnkle ??
+                    widget.person.rightankle?.bodyPointOffset(
+                        widget.widgetWidth, widget.widgetHeight),
+                end: widget.person.rightankle
+                    ?.bodyPointOffset(widget.widgetWidth, widget.widgetHeight))
+            .animate(_animation);
+      }
 
       _controller.reset();
       _controller.forward();
@@ -351,7 +450,6 @@ class PersonPainter extends CustomPainter {
         paint.color = Colors.cyan;
         break;
     }
-
     final facePath = Path();
     if (leftEye != null && rightEye != null) {
       facePath.moveTo(rightEye!.dx, rightEye!.dy);

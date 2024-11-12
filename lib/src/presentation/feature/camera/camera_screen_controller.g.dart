@@ -7,7 +7,7 @@ part of 'camera_screen_controller.dart';
 // **************************************************************************
 
 String _$cameraScreenControllerHash() =>
-    r'91af343d6cb45d92ccc6143c096870e860f6738c';
+    r'4ed9bd996962e7159e24b4585796c31bb1be13d4';
 
 /// Copied from Dart SDK
 class _SystemHash {
